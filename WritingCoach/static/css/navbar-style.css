@@ -1,0 +1,62 @@
+html{
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #212E3B;
+    background: url(../img/randomLetters.jpg);
+    background-size: 100%;
+    text-decoration: none;
+}
+
+.nav-header{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    list-style: none;
+}
+h1{
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    text-decoration: 900;
+}
+h2{
+    font-size: 1rem;
+    color: rgba(102, 252, 241, 0.8);
+    text-align: start;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+header{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 0 3rem 0 0;
+}
+.nav-list{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+.dropdown-list{
+    display: none;
+}
+.nav-list li{
+    align-items: center;
+    padding: 0.8rem;
+    border: solid #66FCF1 0.1rem;
+    border-radius: 1rem;
+    color: white;
+    background-color: rgba(0, 255, 255, 0.2);
+}
+.nav-list li:hover{
+    background-color: rgba(0, 255, 255, 0.5);
+    cursor: pointer;
+}

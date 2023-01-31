@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Writing Coach</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/w-icon.png' %}"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/navbar-style.css"/>
+    
+</head>
+<body>
+    <header>
+        <ul class="nav-header">
+            <li><h1>The Writing Coach</h1></li>
+            <li><h2>Elevate Your Writing</h2></li>
+        </ul>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="">Home</a></li>
+                {% comment %} <li><a href="">Models</a></li>
+                    <ul class="dropdown-list">
+                        <li><a href="">LSTM</a></li>
+                        <li><a href="">Transformer</a></li>
+                    </ul>
+                </li> {% endcomment %}
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>

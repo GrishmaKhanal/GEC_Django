@@ -1,7 +1,10 @@
+{% include 'navbar.html' %}
+{% load static %}
 
+{% block content %}
 <form action="" method="POST" id="input-form">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Check" class="button">
 </form>
-
+{% endblock content %}

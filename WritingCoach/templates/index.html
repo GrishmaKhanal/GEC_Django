@@ -1,3 +1,26 @@
-{{ description }}
-<hr>
-{{ changed_description }}
+{% include 'navbar.html' %}
+{% load static %}
+
+
+<section>
+    <p>The input text is: <br>
+    {{ description }}
+    </p>
+    <hr>
+    <p>The output text is: <br>
+    {{ changed_description }}
+    </p>
+</section>
+<style>
+    section {
+        margin: 1rem auto;
+        width: 50%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        color: rgba(102, 252, 241, 0.8);
+    }
+    p {
+        font-size: 20px;
+    }
+</style>

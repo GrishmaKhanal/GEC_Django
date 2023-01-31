@@ -17,12 +17,3 @@ def home(request):
 # def about(request):
 #     return render(request, 'about.html')
 
-
-# def get_input(request):
-#     if request.method == 'POST':
-#         form = InputText(request.POST)
-#         form.save()
-#         return True
-#     else:
-#         form = InputText()
-#     return True
