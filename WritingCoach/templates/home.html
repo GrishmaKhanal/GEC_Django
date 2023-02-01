@@ -2,9 +2,41 @@
 {% load static %}
 
 {% block content %}
-<form action="" method="POST" id="input-form">
+<form action="" method="POST" id="input-form" style="color:red">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Check" class="button">
+    <div class="form">{{ form.description }} </div>
+    <div class="form"><input type="submit" value="Check" class="button" style=color:"blue"></div>
 </form>
 {% endblock content %}
+<style>
+    .form{
+        display:flex;
+        justify-content: center;
+    }
+    .form-control{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.1rem;
+        background-color: rgba(232, 252, 230, 0.9);
+        border: none;
+        padding: 1rem;
+        margin: 1rem;
+        outline: none;
+        border-radius: 1rem;
+        resize: none
+    }
+    .button{
+        align-items: center;
+        margin: 0.1rem;
+        padding: 0.5rem;
+        border: solid #66FCF1;
+        border-radius: 6rem;
+        font-size: 1.75rem;
+        width: 14rem;
+        color: white;
+        background-color: rgba(0, 255, 255, 0.8);
+    }
+    .button:hover{
+        background-color: rgba(0, 255, 255, 0.2);
+        cursor: pointer;
+    }
+</style>
