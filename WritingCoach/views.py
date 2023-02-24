@@ -8,8 +8,8 @@ def home(request):
         form = InputText(request.POST)
         form.save()
         description = form.cleaned_data['description']
-        changed_description = "Ram is a good boy."
-        return render(request, 'index.html', {'description': description, 'changed_description': changed_description})
+        changed_description = description.upper()
+        return render(request, 'home.html', {'description': description, 'changed_description': changed_description})
     else:
         form = InputText()
     return render(request, 'home.html', {'form': form})

@@ -4,12 +4,16 @@
 {% block content %}
 <form action="" method="POST" id="input-form" style="color:red">
     {% csrf_token %}
-    <div class="form">{{ form.description }} </div>
+    <div class="form"><textarea id="output-textarea">{{ description }}</textarea> </div>
     <div class="form"><input type="submit" value="Check" class="button" style=color:"blue"></div>
 
-    
 </form>
 {% endblock content %}
+{% if changed_description %}
+    <div class="form"><textarea id="output-textarea" readonly>{{ changed_description }}</textarea>
+    </div>
+{% endif %}
+
 <style>
     .form{
         display:flex;
