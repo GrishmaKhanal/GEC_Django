@@ -1,15 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .forms import *    # * -> InputText, ContactForm
+from .models import *
 
 def home(request):
     if request.method == 'POST':
-        form = InputText(request.POST)
-        form.save()
-        description = form.cleaned_data['description']
+        description = request.POST.get('input-description')
         changed_description = description.upper()
         return render(request, 'home.html', {'description': description, 'changed_description': changed_description})
-    else:
-        form = InputText()
-    return render(request, 'home.html', {'form': form})
+    else:  
+        return render(request, 'home.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')
