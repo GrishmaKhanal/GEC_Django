@@ -1,44 +1,37 @@
 {% include 'navbar.html' %}
 {% load static %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function functionName() {
+        $("#output").val("");
+        $("#input-area").val("");
+    }
+</script>
 
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 {% block content %}
-<form action="" method="POST" id="input-form" style="color:red">
-    {% csrf_token %}
-    <div class="form">{{ form.description }} </div>
-    <div class="form"><input type="submit" value="Check" class="button" style=color:"blue"></div>
 
+<div>
+    <form action="" method="POST" id="input-form">
+        {% csrf_token %}
+        <textarea class="text" id="input-area" name="input-description" placeholder="Enter your text here..." >{{ description }}</textarea>
+        <input type="submit" value="Check" class="button">
+    </form>
+    {% if changed_description %}
     
-</form>
+    <form action="" id="output-form">
+        <textarea class="text" id="output">{{ changed_description }}</textarea>
+        <input type="button" value="Clear" id="clear" class="button" onclick="functionName();">
+    </form>
+    {% else %}
+    <form action="" id="output-form">
+        <textarea class="text" placeholder="Result" disabled></textarea>
+        <input type="button" value="Clear" class="button" onclick="functionName();">
+    </form>
+    {% endif %}
+
+</div>
+
 {% endblock content %}
-<style>
-    .form{
-        display:flex;
-        justify-content: center;
-    }
-    .form-control{
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.1rem;
-        background-color: rgba(232, 252, 230, 0.9);
-        border: none;
-        padding: 1rem;
-        margin: 1rem;
-        outline: none;
-        border-radius: 1rem;
-        resize: none
-    }
-    .button{
-        align-items: center;
-        margin: 0.1rem;
-        padding: 0.5rem;
-        border: solid #66FCF1;
-        border-radius: 6rem;
-        font-size: 1.75rem;
-        width: 14rem;
-        color: white;
-        background-color: rgba(0, 255, 255, 0.8);
-    }
-    .button:hover{
-        background-color: rgba(0, 255, 255, 0.2);
-        cursor: pointer;
-    }
-</style>
+
+
