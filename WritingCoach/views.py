@@ -13,7 +13,3 @@ def home(request):
     else:
         form = InputText()
     return render(request, 'home.html', {'form': form})
-
-# def about(request):
-#     return render(request, 'about.html')
-
