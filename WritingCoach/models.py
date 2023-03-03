@@ -4,30 +4,41 @@ class WritingCoach(models.Model):
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
-# import for ml
-import tensorflow as tf
-import pickle, re
-import numpy as np
+import tensorflow
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+tokenizer = AutoTokenizer.from_pretrained("anujraymajhi/t5-GEC-128len-9e")
+model = AutoModelForSeq2SeqLM.from_pretrained("anujraymajhi/t5-GEC-128len-9e")
 
-def load_model():
-    model_path = 'ml_models/model.h5'
-    tokenizer_path = 'ml_models/tokenizer.pkl'
-
-    with open(tokenizer_path, 'rb') as handle:
-        tokenizer = pickle.load(handle)
-    model = tf.keras.models.load_model(model_path)
-    return model, tokenizer
-
-def predict_error(text):
-    MAX_SEQUENCE_LENGTH = 32
-    model, tokenizer = load_model()
-    sequence = tokenizer.texts_to_sequences([text])
-    padded = tf.keras.preprocessing.sequence.pad_sequences(sequence, maxlen=MAX_SEQUENCE_LENGTH, padding='post', truncating='post')
-    
-    # generate prediction and convert it to text
-    prediction = model.predict(padded)
-    output = tokenizer.sequences_to_texts([prediction])[0]
+def predict_error(sentence):
+    input_ids = tokenizer.encode(sentence, return_tensors="pt")
+    outputs = model.generate(input_ids, max_length=128, num_beams=4, early_stopping=False)
+    output = tokenizer.decode(outputs[0])
     return output
+
+# import for ml
+# import tensorflow as tf
+# import pickle, re
+# import numpy as np
+
+# def load_model():
+#     model_path = 'ml_models/model.h5'
+#     tokenizer_path = 'ml_models/tokenizer.pkl'
+
+#     with open(tokenizer_path, 'rb') as handle:
+#         tokenizer = pickle.load(handle)
+#     model = tf.keras.models.load_model(model_path)
+#     return model, tokenizer
+
+# def predict_error(text):
+#     MAX_SEQUENCE_LENGTH = 32
+#     model, tokenizer = load_model()
+#     sequence = tokenizer.texts_to_sequences([text])
+#     padded = tf.keras.preprocessing.sequence.pad_sequences(sequence, maxlen=MAX_SEQUENCE_LENGTH, padding='post', truncating='post')
+    
+#     # generate prediction and convert it to text
+#     prediction = model.predict(padded)
+#     output = tokenizer.sequences_to_texts([prediction])[0]
+#     return output
 
 # def correct_sentence(sentence):
 #     sequence = tkn_all.texts_to_sequences([start_token + " " + sentence + " " + stop_token])

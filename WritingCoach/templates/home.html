@@ -12,20 +12,21 @@
 {% block content %}
 
 <div>
-    <form action="" method="POST" id="input-form">
+    <form method="POST" id="input-form">
         {% csrf_token %}
         <textarea class="text" id="input-area" name="input-description" placeholder="Enter your text here..." >{{ description }}</textarea>
         <input type="submit" value="Check" class="button">
     </form>
-    {% if changed_description %}
     
-    <form action="" id="output-form">
+    {% if changed_description %}
+    <form id="output-form">
         <textarea class="text" id="output">{{ changed_description }}</textarea>
         <input type="button" value="Clear" id="clear" class="button" onclick="clearTextarea();">
     </form>
+
     {% else %}
-    <form action="" id="output-form">
-        <textarea class="text" placeholder="Result" disabled></textarea>
+    <form>
+        <textarea class="text" id="empty-output" placeholder="Result"></textarea>
         <input type="button" value="Clear" class="button" onclick="clearTextarea();">
     </form>
     {% endif %}

@@ -63,3 +63,12 @@ form{
         font-size: 0.9rem;
     }
 }
+
+.added {
+    color: green;
+    font-weight: bold;
+}
+.deleted {
+    color: red;
+    font-weight: bold;
+}
