@@ -1,25 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
-.text-area{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.text-area div {
-    width: 100%;
-}
-  
-.text-area div:first-child {
-    margin-bottom: 1rem;
-}
+
+
 .text{
-    height: 20em;
-    width: 30em;
+    height: 24rem;
+    width: 30rem;
     margin: 1rem;
     padding: 1rem;
     outline: none;
     border: none;
-    border-radius: 1rem;
+    border-radius: 0.4rem;
     background-color: rgb(232, 252, 230);
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
@@ -48,11 +37,16 @@ input[value="Clear"]{
 input[value="Clear"]:hover{
     background-color: #c90606;
 }
-form{
+div form{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+}
+.text-area{
+    display: flex;
+    justify-content: center;
+    justify-self: flex-end;
 }
 @media screen and (max-width: 600px){
     .text{
