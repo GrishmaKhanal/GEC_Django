@@ -1,5 +1,7 @@
 {% include 'navbar.html' %}
 {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     function clearTextarea() {
@@ -8,7 +10,7 @@
     }
 </script>
 
-<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
 {% block content %}
 
 <div class="text-area">
