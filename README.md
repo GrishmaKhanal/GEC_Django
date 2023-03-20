@@ -5,13 +5,14 @@
    * [Getting Started](#getting-started)
    * [Installation](#installation)
    * [Run Server](#run-server)
-   * [Features](#features)
+   * [Report and Conclusion](#report-and-conclusion)
 
 ## Project Overview
 
 This project is built to correct grammatical errors
 
 ## Getting Started
+If you just want to check our project just goto [Report and Conclusion](#report-and-conclusion)
 
 In this project you need:
 pip
@@ -79,7 +80,10 @@ pipenv
    ```
 
    Now you can change the django file to your liking. Always make sure the virtual environment is activated using "pipenv shell"
-## Features
-    ok
+## Report and Conclusion
+    
+   Our Project Report can be Obtained [Report pdf](https://drive.google.com/file/d/1gphmw8t3VAec-T097W-LzfqePLAg-ZmK/view?usp=sharing)
+    
+   To view our model used in the project visit [Transformer Model Demo](https://huggingface.co/anujraymajhi/t5-GEC-128len-9e)
     
 Contact me at my socials if any problem aries.
