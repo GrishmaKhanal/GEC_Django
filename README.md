@@ -9,7 +9,11 @@
 
 ## Project Overview
 
-This project is built to correct grammatical errors
+This project is built to compare different NLP models for Grammar Error Correction and to include the best performing model in our web project. This project was completed in group of four including:
+   * [Anuj Raymajhi](https://github.com/anuj-raymajhi)
+   * [Anup Gelal]()
+   * [Grishma Raj Khanal](https://github.com/GrishmaKhanal)
+   * [Kaustuv Karki](https://github.com/Kaustuv-Karki)
 
 ## Getting Started
 If you just want to check our project just goto [Report and Conclusion](#report-and-conclusion)
@@ -18,26 +22,15 @@ In this project you need:
 pip
 pipenv
     
- * Install pip
+  Install pip
    open the terminal and make sure you have python3 installed
-
-   for Linux based
-    
-   ```
-   sudo dnf install python-pip
-   ```
-   use apt for ubuntu-based distro, dnf for fedora based, pacman for arch-based and so on...
    
-   or
-   ```
-   python3 get-pip.py
-   ```
    verify the pip installation using:
    ```
    pip --version
    ```
 
-* Install pipenv
+  Install pipenv
 
    ```
    pip install pipenv
